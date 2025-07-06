@@ -1,0 +1,12 @@
+services:
+  agent:
+    build: .
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GOOGLE_CSE_API_KEY=${GOOGLE_CSE_API_KEY}
+      - GOOGLE_CSE_CX=${GOOGLE_CSE_CX}
+    volumes:
+      - ./src:/app/src
+    command: ["python", "src/main.py"]
+    stdin_open: true
+    tty: true 
